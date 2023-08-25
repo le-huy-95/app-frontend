@@ -128,6 +128,34 @@ const NavHeader = (props) => {
                                             {t('navigation.Ten')}
                                         </NavDropdown.Item>
                                     </NavDropdown>
+                                    
+                                    {user.isAuthenticated === false && 
+                                    < NavDropdown title={`${t('navigation.Eleven')}`} id="basic-nav-dropdown" className='dropdown'>
+                                            <NavDropdown.Item href='/order-processing'>
+                                                {t('navigation.Twelve')}
+                                            </NavDropdown.Item>
+                                                <NavDropdown.Item href='/Pickup_staff'>
+                                                    {t('navigation.Thirteen')}
+                                                </NavDropdown.Item>
+                                            
+                                                <NavDropdown.Item href='/Warehouse_staff'>
+                                                    {t('navigation.Fourteen')}
+                                                </NavDropdown.Item>
+
+                                            
+                                                <NavDropdown.Item href='/Delivery_staff'>
+                                                    {t('navigation.fifteen')}
+                                                </NavDropdown.Item>
+
+                                            
+                                                <NavDropdown.Item href='/Overview'>
+                                                    {t('navigation.Sixteen')}
+
+                                                </NavDropdown.Item>
+
+                                            
+                                        </NavDropdown>
+    }
 
                                     {user?.account?.groupName === "Staff" &&
                                         < NavDropdown title={`${t('navigation.Eleven')}`} id="basic-nav-dropdown" className='dropdown'>
@@ -335,6 +363,63 @@ const NavHeader = (props) => {
                                         </NavDropdown.Item>
                                     </NavDropdown>
 
+                                    < NavDropdown title={`${t('navigation.Eleven')}`} id="basic-nav-dropdown" className='dropdown'>
+                                            <NavDropdown.Item href='/order-processing'>
+                                                {t('navigation.Twelve')}
+                                            </NavDropdown.Item>
+                                            {user?.account?.groupName === "Staff" && user?.account?.Position === "Nhân viên lấy hàng" &&
+                                                <NavDropdown.Item href='/Pickup_staff'>
+                                                    {t('navigation.Thirteen')}
+                                                </NavDropdown.Item>
+                                            }
+                                            {user?.account?.groupName === "Staff" && user?.account?.Position === "Nhân viên kho hàng" &&
+                                                <NavDropdown.Item href='/Warehouse_staff'>
+                                                    {t('navigation.Fourteen')}
+                                                </NavDropdown.Item>
+
+                                            }
+                                            {user?.account?.groupName === "Staff" && user?.account?.Position === "Nhân viên giao hàng" &&
+                                                <NavDropdown.Item href='/Delivery_staff'>
+                                                    {t('navigation.fifteen')}
+                                                </NavDropdown.Item>
+
+                                            }
+                                            {user?.account?.groupName === "Staff" && user?.account?.Position === "Nhân viên kế toán" &&
+                                                <NavDropdown.Item href='/Overview'>
+                                                    {t('navigation.Sixteen')}
+
+                                                </NavDropdown.Item>
+
+                                            }
+                                        </NavDropdown>
+
+                                        {user.isAuthenticated === false && 
+                                    < NavDropdown title={`${t('navigation.Eleven')}`} id="basic-nav-dropdown" className='dropdown'>
+                                            <NavDropdown.Item href='/order-processing'>
+                                                {t('navigation.Twelve')}
+                                            </NavDropdown.Item>
+                                                <NavDropdown.Item href='/Pickup_staff'>
+                                                    {t('navigation.Thirteen')}
+                                                </NavDropdown.Item>
+                                            
+                                                <NavDropdown.Item href='/Warehouse_staff'>
+                                                    {t('navigation.Fourteen')}
+                                                </NavDropdown.Item>
+
+                                            
+                                                <NavDropdown.Item href='/Delivery_staff'>
+                                                    {t('navigation.fifteen')}
+                                                </NavDropdown.Item>
+
+                                            
+                                                <NavDropdown.Item href='/Overview'>
+                                                    {t('navigation.Sixteen')}
+
+                                                </NavDropdown.Item>
+
+                                            
+                                        </NavDropdown>
+                                          }
 
                                     {user?.account?.groupName === "Staff" &&
                                         <NavDropdown title={`${t('navigation.Eleven')}`} id="basic-nav-dropdown" className='dropdown'>
